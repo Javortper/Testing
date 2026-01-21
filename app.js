@@ -245,16 +245,10 @@ function openTaskModal() {
     elements.taskTitleInput.value = '';
     elements.taskDescInput.value = '';
     elements.taskTitleInput.focus();
-    if (elements.welcomeImage) {
-        elements.welcomeImage.style.display = 'flex';
-    }
 }
 
 function closeTaskModal() {
     elements.taskModal.classList.remove('active');
-    if (elements.welcomeImage) {
-        elements.welcomeImage.style.display = 'none';
-    }
 }
 
 elements.addProjectBtn.addEventListener('click', openProjectModal);
@@ -280,12 +274,30 @@ elements.projectNameInput.addEventListener('keypress', (e) => {
 elements.addTaskBtn.addEventListener('click', openTaskModal);
 
 elements.cancelTaskBtn.addEventListener('click', closeTaskModal);
+function showWelcomeImage() {
+    if (elements.welcomeImage) {
+        elements.welcomeImage.style.display = 'flex';
+        setTimeout(() => {
+            if (elements.welcomeImage) {
+                elements.welcomeImage.style.display = 'none';
+            }
+        }, 2000);
+    }
+}
+
+if (elements.welcomeImage) {
+    elements.welcomeImage.addEventListener('click', () => {
+        elements.welcomeImage.style.display = 'none';
+    });
+}
+
 elements.saveTaskBtn.addEventListener('click', () => {
     const title = elements.taskTitleInput.value.trim();
     const desc = elements.taskDescInput.value.trim();
     if (desc) {
         addTask(title, desc);
         closeTaskModal();
+        showWelcomeImage();
     } else {
         alert('Debes incluir una descripción');
     }
@@ -304,6 +316,7 @@ elements.taskDescInput.addEventListener('keypress', (e) => {
         if (desc) {
             addTask(title, desc);
             closeTaskModal();
+            showWelcomeImage();
         } else {
             alert('Debes incluir una descripción');
         }
