@@ -8,6 +8,7 @@ const state = {
 
 const elements = {
     projectList: document.getElementById('projectList'),
+    mobileProjectSelect: document.getElementById('mobileProjectSelect'),
     taskList: document.getElementById('taskList'),
     currentProjectTitle: document.getElementById('currentProjectTitle'),
     addProjectBtn: document.getElementById('addProjectBtn'),
@@ -38,6 +39,7 @@ function generateId() {
 
 function renderProjects() {
     elements.projectList.innerHTML = '';
+    elements.mobileProjectSelect.innerHTML = '<option value="">Selecciona un proyecto...</option>';
     
     state.projects.forEach(project => {
         const li = document.createElement('li');
@@ -52,8 +54,27 @@ function renderProjects() {
             }
         });
         elements.projectList.appendChild(li);
+
+        const option = document.createElement('option');
+        option.value = project.id;
+        option.textContent = project.name;
+        if (project.id === state.currentProjectId) {
+            option.selected = true;
+        }
+        elements.mobileProjectSelect.appendChild(option);
     });
 }
+
+elements.mobileProjectSelect.addEventListener('change', (e) => {
+    const projectId = parseInt(e.target.value);
+    if (projectId) {
+        selectProject(projectId);
+    } else {
+        state.currentProjectId = null;
+        renderProjects();
+        renderTasks();
+    }
+});
 
 let draggedTaskId = null;
 
