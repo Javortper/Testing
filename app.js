@@ -281,7 +281,7 @@ function showWelcomeImage() {
             if (elements.welcomeImage) {
                 elements.welcomeImage.style.display = 'none';
             }
-        }, 2000);
+        }, 5000);
     }
 }
 
