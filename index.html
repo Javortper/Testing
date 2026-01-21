@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Proyectos</h2>
+                <button id="addProjectBtn" class="btn btn-primary">+</button>
+            </div>
+            <ul id="projectList" class="project-list"></ul>
+            <div class="sidebar-footer">
+                <button id="exportBtn" class="btn btn-secondary">Exportar</button>
+                <button id="importBtn" class="btn btn-secondary">Importar</button>
+                <input type="file" id="fileInput" accept=".json" style="display: none;">
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <div class="task-header">
+                <h1 id="currentProjectTitle">Selecciona un proyecto</h1>
+                <button id="addTaskBtn" class="btn btn-primary" disabled>Añadir Tarea</button>
+            </div>
+            
+            <ul id="taskList" class="task-list"></ul>
+            
+            <div id="emptyState" class="empty-state">
+                <p>Selecciona o crea un proyecto para comenzar</p>
+            </div>
+        </main>
+    </div>
+
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <h3>Nuevo Proyecto</h3>
+            <input type="text" id="projectNameInput" placeholder="Nombre del proyecto">
+            <div class="modal-actions">
+                <button id="cancelProjectBtn" class="btn btn-secondary">Cancelar</button>
+                <button id="saveProjectBtn" class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <h3>Nueva Tarea</h3>
+            <input type="text" id="taskTitleInput" placeholder="Título de la tarea (opcional)">
+            <textarea id="taskDescInput" placeholder="Descripción (opcional)" rows="3"></textarea>
+            <div class="modal-actions">
+                <button id="cancelTaskBtn" class="btn btn-secondary">Cancelar</button>
+                <button id="saveTaskBtn" class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
