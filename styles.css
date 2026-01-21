@@ -435,3 +435,208 @@ body {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+@media (max-width: 768px) {
+    .app {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 15px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .sidebar-header {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+        width: auto;
+        margin-right: auto;
+    }
+
+    .sidebar-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .project-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 10px 0;
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .project-item {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+        margin-bottom: 0;
+        white-space: nowrap;
+    }
+
+    .sidebar-footer {
+        width: 100%;
+        padding-top: 10px;
+        margin-top: 10px;
+        border-top: 1px solid #34495e;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .task-header {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+
+    .task-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .task-header .btn-primary {
+        width: 100%;
+        padding: 12px 20px;
+    }
+
+    .task-item {
+        padding: 15px;
+    }
+
+    .task-text {
+        font-size: 1.1rem;
+    }
+
+    .task-description {
+        font-size: 1rem;
+    }
+
+    .task-checkbox {
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+    }
+
+    .drag-handle {
+        font-size: 1rem;
+        margin-right: 10px;
+    }
+
+    .delete-task {
+        padding: 8px;
+        font-size: 1.2rem;
+        opacity: 1;
+    }
+
+    .empty-state {
+        margin-top: 40px;
+        padding: 25px;
+        font-size: 1.1rem;
+    }
+
+    .modal-content {
+        padding: 20px;
+        margin: 15px;
+        max-width: calc(100% - 30px);
+    }
+
+    .modal-content input,
+    .modal-content textarea {
+        padding: 10px 12px;
+        font-size: 1rem;
+    }
+
+    .welcome-image img {
+        max-width: 95%;
+        max-height: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        padding: 10px;
+    }
+
+    .sidebar-header h2 {
+        font-size: 1rem;
+    }
+
+    #addProjectBtn {
+        width: 35px;
+        height: 35px;
+        font-size: 1.3rem;
+    }
+
+    .sidebar-footer .btn {
+        padding: 8px 10px;
+        font-size: 0.75rem;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .task-header h1 {
+        font-size: 1.3rem;
+    }
+
+    .task-item {
+        padding: 12px;
+        flex-wrap: wrap;
+    }
+
+    .task-text {
+        font-size: 1rem;
+    }
+
+    .task-description {
+        font-size: 0.9rem;
+        margin-top: 4px;
+    }
+
+    .task-content {
+        order: 2;
+        width: 100%;
+        margin-top: 8px;
+        padding-left: 36px;
+    }
+
+    .task-checkbox {
+        order: 1;
+        width: 22px;
+        height: 22px;
+    }
+
+    .drag-handle {
+        order: 0;
+        margin-right: 8px;
+    }
+
+    .delete-task {
+        order: 3;
+        padding: 5px;
+    }
+
+    .modal-content {
+        padding: 15px;
+    }
+
+    .modal-content h3 {
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+    }
+
+    .modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .modal-actions .btn {
+        width: 100%;
+    }
+}
