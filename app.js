@@ -24,7 +24,8 @@ const elements = {
     emptyState: document.getElementById('emptyState'),
     exportBtn: document.getElementById('exportBtn'),
     importBtn: document.getElementById('importBtn'),
-    fileInput: document.getElementById('fileInput')
+    fileInput: document.getElementById('fileInput'),
+    welcomeImage: document.getElementById('welcomeImage')
 };
 
 function saveState() {
@@ -244,10 +245,16 @@ function openTaskModal() {
     elements.taskTitleInput.value = '';
     elements.taskDescInput.value = '';
     elements.taskTitleInput.focus();
+    if (elements.welcomeImage) {
+        elements.welcomeImage.style.display = 'flex';
+    }
 }
 
 function closeTaskModal() {
     elements.taskModal.classList.remove('active');
+    if (elements.welcomeImage) {
+        elements.welcomeImage.style.display = 'none';
+    }
 }
 
 elements.addProjectBtn.addEventListener('click', openProjectModal);
