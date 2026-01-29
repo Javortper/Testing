@@ -86,6 +86,13 @@ python manage.py makemigrations
 python manage.py migrate
 
 
+### Lanzar panel con NGROK para que entre ana
+ejecuta el runserver
+en otra cmd escribes:
+ngrok http 8000 
+eso te da la URL y añadele el /admin
+
+
 ### --------------
 
 > Flujo: modificas `models.py` -> `makemigrations` -> `migrate`.
