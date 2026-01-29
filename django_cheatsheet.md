@@ -115,6 +115,9 @@ django-admin startproject nombre_proyecto
 # Crear una app dentro del proyecto
 python manage.py startapp nombre_app
 
+### 3. Crear superusuario para el panel
+python manage.py createsuperuser 
+
 
 ### 8. Entorno virtual
 
