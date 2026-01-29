@@ -11,7 +11,10 @@
       "Bash(git checkout:*)",
       "Bash(git commit:*)",
       "Bash(python manage.py startapp:*)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(findstr:*)",
+      "Bash(del nul)"
     ]
   }
 }
