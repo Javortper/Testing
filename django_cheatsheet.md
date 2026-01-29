@@ -40,7 +40,18 @@
 
 ## Comandos basicos (por orden de uso)
 
-### 1. Crear proyecto y apps
+### 1. Servidor de desarrollo
+
+```bash
+# Arrancar el servidor en http://127.0.0.1:8000
+python manage.py runserver
+
+# Arrancar en otro puerto
+python manage.py runserver 8080
+
+
+
+### 2. Crear proyecto y apps
 
 ```bash
 # Crear un proyecto nuevo
@@ -52,7 +63,7 @@ python manage.py startapp nombre_app
 
 > Despues de crear la app, anadirla a `INSTALLED_APPS` en `settings.py`.
 
-### 2. Migraciones (base de datos)
+### 3. Migraciones (base de datos)
 
 ```bash
 # Generar migraciones a partir de los modelos
@@ -64,46 +75,7 @@ python manage.py migrate
 
 > Flujo: modificas `models.py` -> `makemigrations` -> `migrate`.
 
-### 3. Servidor de desarrollo
 
-```bash
-# Arrancar el servidor en http://127.0.0.1:8000
-python manage.py runserver
-
-# Arrancar en otro puerto
-python manage.py runserver 8080
-```
-
-### 4. Superusuario y admin
-
-```bash
-# Crear superusuario para acceder a /admin
-python manage.py createsuperuser
-```
-
-### 5. Shell y depuracion
-
-```bash
-# Abrir shell interactivo de Django (para probar queries, modelos, etc.)
-python manage.py shell
-```
-
-### 6. Ficheros estaticos
-
-```bash
-# Recopilar todos los estaticos en una carpeta (para produccion)
-python manage.py collectstatic
-```
-
-### 7. Dependencias
-
-```bash
-# Instalar dependencias
-pip install -r requirements.txt
-
-# Guardar dependencias actuales
-pip freeze > requirements.txt
-```
 
 ### 8. Entorno virtual
 
