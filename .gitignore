@@ -1,0 +1,25 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+
+# Entorno virtual
+venv/
+.venv/
+
+# Django
+db.sqlite3
+*.log
+
+# Variables de entorno
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Pipenv
+Pipfile.lock
+
+# Static files collected
+staticfiles/
