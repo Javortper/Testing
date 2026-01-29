@@ -14,7 +14,9 @@
       "Bash(dir:*)",
       "Bash(git ls-tree:*)",
       "Bash(findstr:*)",
-      "Bash(del nul)"
+      "Bash(del nul)",
+      "Bash(python manage.py makemigrations:*)",
+      "Bash(pipenv run python:*)"
     ]
   }
 }

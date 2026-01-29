@@ -19,6 +19,18 @@ class Client(models.Model):
     # auto_now_add=True: Pone la fecha actual automáticamente al crearlo.
     fecha_creacion = models.DateTimeField(auto_now_add=True)
 
+    # ForeignKey: muchos clientes pueden tener el mismo abogado.
+    # 'lawyers.Lawyer' entre comillas evita importación circular.
+    # null=True: un cliente puede existir sin abogado asignado (de momento).
+    # blank=True: permite dejar el campo vacío en formularios.
+    abogado = models.ForeignKey(
+        'lawyers.Lawyer',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='clientes'
+    )
+
     # Esta función mágica (__str__) define cómo se ve el objeto en texto.
     # Sin esto, en el panel verías "Client object (1)", que es feo.
     def __str__(self):
