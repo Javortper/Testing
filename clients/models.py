@@ -1,7 +1,7 @@
 from django.db import models
 
 # Esta clase se convertirá en la tabla "clients_cliente" en la base de datos
-class Cliente(models.Model):
+class Client(models.Model):
     # CharField: Texto corto. Ideal para nombres.
     nombres = models.CharField(max_length=100) 
     apellidos = models.CharField(max_length=100)
@@ -20,6 +20,6 @@ class Cliente(models.Model):
     fecha_creacion = models.DateTimeField(auto_now_add=True)
 
     # Esta función mágica (__str__) define cómo se ve el objeto en texto.
-    # Sin esto, en el panel verías "Cliente object (1)", que es feo.
+    # Sin esto, en el panel verías "Client object (1)", que es feo.
     def __str__(self):
         return f"{self.apellidos}, {self.nombres}"
