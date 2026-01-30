@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Expedientes - Easy Law{% endblock %}
+
+{% block contenido %}
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <div>
+            <h5 class="mb-0">
+                Lista de Expedientes
+                <span class="badge bg-secondary ms-2">{{ expedientes|length }}</span>
+            </h5>
+        </div>
+        <a href="#" class="btn btn-primary btn-sm">+ Añadir expediente</a>
+    </div>
+    <div class="card-body">
+        {% if expedientes %}
+            <div class="mb-3">
+                <input type="text" id="filtro-expedientes" class="form-control" placeholder="Buscar expediente...">
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover table-striped mb-0" id="tabla-expedientes">
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Cliente</th>
+                            <th>Fecha Límite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for expediente in expedientes %}
+                        <tr>
+                            <td><a href="#" class="text-decoration-none">{{ expediente.titulo }}</a></td>
+                            <td>{{ expediente.client.apellidos }}, {{ expediente.client.nombres }}</td>
+                            <td>{{ expediente.fecha_limite }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="text-center py-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="text-muted mb-3" viewBox="0 0 16 16">
+                    <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+                    <path d="M4.5 10.5A.5.5 0 0 1 5 10h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5m0-2A.5.5 0 0 1 5 8h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5m0-2A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5m0-2A.5.5 0 0 1 5 4h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5"/>
+                </svg>
+                <p class="text-muted mb-3">No hay expedientes registrados.</p>
+                <a href="#" class="btn btn-primary">+ Añadir primer expediente</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{% if expedientes %}
+<script>
+document.getElementById('filtro-expedientes').addEventListener('input', function() {
+    const filtro = this.value.toLowerCase();
+    const filas = document.querySelectorAll('#tabla-expedientes tbody tr');
+    filas.forEach(function(fila) {
+        const texto = fila.textContent.toLowerCase();
+        fila.style.display = texto.includes(filtro) ? '' : 'none';
+    });
+});
+</script>
+{% endif %}
+{% endblock %}

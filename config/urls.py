@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # include() dice: "todo lo que empiece por 'clientes/' lo gestiona clients/urls.py"
     path('clientes/', include('clients.urls')),
-    
+    path('abogados/', include('lawyers.urls')),
+    path('expedientes/', include('cases.urls')),
 ]
