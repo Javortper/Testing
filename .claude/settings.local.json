@@ -16,7 +16,9 @@
       "Bash(findstr:*)",
       "Bash(del nul)",
       "Bash(python manage.py makemigrations:*)",
-      "Bash(pipenv run python:*)"
+      "Bash(pipenv run python:*)",
+      "Bash(tree:*)",
+      "Bash(wc:*)"
     ]
   }
 }
