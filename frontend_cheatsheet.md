@@ -462,6 +462,18 @@ font-size: 16px;           /* tamano de texto */
 text-decoration: none;     /* quitar subrayado */
 ```
 
+## Resumen rapido - Bootstrap 5
+
+| Quiero... | Cambio |
+|---|---|
+| Cambiar color del navbar | `bg-dark` → `bg-primary`, `bg-success`, etc. |
+| Más espacio entre elementos | Subir el número: `my-4` → `my-5` |
+| Menos espacio | Bajar el número: `my-4` → `my-2` |
+| Cambiar color de un botón | `btn-primary` → `btn-success`, `btn-danger`, etc. |
+| Quitar rayas de la tabla | Eliminar `table-striped` |
+| Quitar resaltado al hover | Eliminar `table-hover` |
+| Añadir columna a la tabla | Añadir un `<th>` en thead y un `<td>` en el `{% for %}` |
+
 ## Flujo completo (resumen visual)
 
 ```
