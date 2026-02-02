@@ -2,6 +2,10 @@
 
 ## Estructura de ficheros de un proyecto Django
 
+# BASICO FLUJO DE TODO EN DJANGO
+Usuario visita URL → Django busca en urls.py → Ejecuta la vista (views.py) → Devuelve un template HTML
+
+
 ### Nivel proyecto (creado con `django-admin startproject nombre`)
 
 | Fichero / Carpeta | Descripcion |

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Eliminar Abogado - Easy Law{% endblock %}
+
+{% block contenido %}
+<div class="max-w-lg mx-auto">
+    <div class="bg-white rounded-lg shadow">
+        <div class="px-6 py-4 border-b border-gray-200">
+            <h5 class="text-lg font-semibold text-gray-800">Eliminar Abogado</h5>
+        </div>
+        <div class="p-6 text-center">
+            <p class="text-gray-700 mb-6">
+                ¿Estás seguro de que quieres eliminar a
+                <span class="font-semibold">{{ abogado.nombre }} {{ abogado.apellidos }}</span>?
+            </p>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="flex justify-center gap-3">
+                    <button type="submit" class="bg-red-600 hover:bg-red-700 text-white text-sm font-medium px-6 py-2 rounded-lg transition">
+                        Eliminar
+                    </button>
+                    <a href="{% url 'lista_abogados' %}" class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-sm font-medium px-6 py-2 rounded-lg transition">
+                        Cancelar
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
