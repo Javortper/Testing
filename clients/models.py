@@ -3,7 +3,7 @@ from django.db import models
 # Esta clase se convertirá en la tabla "clients_cliente" en la base de datos
 class Client(models.Model):
     # CharField: Texto corto. Ideal para nombres.
-    nombres = models.CharField(max_length=100) 
+    nombre = models.CharField(max_length=100) 
     apellidos = models.CharField(max_length=100)
     
     # EmailField: Django valida automáticamente que tenga formato @email.com
@@ -34,4 +34,4 @@ class Client(models.Model):
     # Esta función mágica (__str__) define cómo se ve el objeto en texto.
     # Sin esto, en el panel verías "Client object (1)", que es feo.
     def __str__(self):
-        return f"{self.apellidos}, {self.nombres}"
+        return f"{self.apellidos}, {self.nombre}"
